@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countrylayer Api</title>
+</head>
+<body>
+    
+
+<script>
+    /**
+     *  Question:
+     * ===========
+     * Use the rest countries API url -> https://restcountries.eu/rest/v2/all and display all the country flags in console
+Use the same rest countries and print all countries name, region, sub region and population
+
+     */
+    alert("Restcountries API is allowing free subscription user for specific data only and 50 counts can be hitted by Free subsciber");
+var requ = new XMLHttpRequest();
+
+var url ="http://api.countrylayer.com/v2/lang/eng?access_key=872dd7f9647fbc9ec58bd9eded3467d0&fullText=false";
+
+// var url ="http://api.countrylayer.com/v2/all?access_key=3f30436cbdc52e3f4e2d95551f9e9bbe";
+
+requ.open("GET",url);
+requ.send();
+
+requ.onload = function(){
+    var incomingData = JSON.parse(this.response);
+  //  console.log(incomingData);
+/**
+ * for now i value is limited to 100 because countrylayer api doesnot allow more number of hits in an server..
+ * */
+  for(let i=0;i<100;i++){
+   console.log(`Name is : ${incomingData[i].name}`);
+       console.log(`Capital is : ${incomingData[i].capital}`);
+     console.log(`Region is : ${incomingData[i].region}`);
+    
+    //    console.log("==================================")
+   }
+}
+
+</script>
+
+</body>
+</html>

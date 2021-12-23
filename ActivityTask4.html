@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Task 4</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.4/lodash.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+</head>
+<body>
+    
+    <script>
+/***
+  Question1. How to compare two JSON have the same properties without order?
+  **/
+var obj1 = { name: "Person 1", age:5 };
+var obj2 = { age:5, name: "Person 1" };
+
+/**1st method JSON.stringify(obj1) == JSON.stringify(obj2) --> if order of key/values is equal then it will work
+
+var res = JSON.stringify(obj1) == JSON.stringify(obj2);
+console.log(res);
+
+**/
+
+/***
+2nd method = lodash js is used to compare two object but not order
+***/
+console.log((_.isEqual(obj1,obj2)));
+
+
+
+
+    </script>
+ 
+</body>
+</html>
