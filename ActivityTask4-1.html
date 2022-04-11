@@ -9,9 +9,34 @@
 <body>
     
 
-<script>
+
+    
+    <script>
+
+  /** Question 2 Display country flag - There is no country flags in that api--
+   * *
+   * */
+var allCountries = new XMLHttpRequest();
+var urlCountries = "https://restcountries.eu/rest/v2/all?access_key=872dd7f9647fbc9ec58bd9eded3467d0&fullText=false";
+allCountries.open("GET",urlCountries);
+allCountries.send();
+
+allCountries.onload = function(){
+   var allCountriesData = JSON.parse(this.response);
+   console.log(allCountries);
+   for(let i=0;i<allCountriesData.length;i++){
+   
+    console.log(allCountriesData[i]);
+   }
+
+}
+
+
+
+
+
     /**
-     *  Question:
+     *  Question 3:
      * ===========
      * Use the rest countries API url -> https://restcountries.eu/rest/v2/all and display all the country flags in console
 Use the same rest countries and print all countries name, region, sub region and population
